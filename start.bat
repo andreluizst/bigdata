@@ -1,0 +1,1 @@
+docker container run --hostname=quickstart.cloudera --privileged=true -t -i -v documents:/src --publish-all=true -p 7180:7180 -p 8888:8888 cloudera/quickstart /usr/bin/docker-quickstart
