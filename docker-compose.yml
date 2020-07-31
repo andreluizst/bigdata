@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     cloudera:
-        image: cloudera_bigdata:v1
+        image: bigdata_cloudera:1.0
         build:
             context: .
         container_name: bigdata
@@ -30,4 +30,8 @@ services:
             #- "7077:7077"   # Spark Master
         volumes:
             - ./documents:/src
+            - ./scripts:/user_scripts
         stdin_open: true
+        # para verificar a versão do linux: cat /etc/*-release
+        # para descobrir a versao do curl: rpm -qa | grep curl
+        # para descobrir quais as versões do python etão instaladas: ls -lh /usr/bin/python*

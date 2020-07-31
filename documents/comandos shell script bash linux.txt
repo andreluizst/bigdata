@@ -1,0 +1,30 @@
+teste=valor 			=>		criar e atribuir variavel de ambiente local no bash
+encho teste				=>		imprime o texto "teste" no terminal
+echo=$teste				=>		exibe o conteúdo da variável teste
+unset=teste				=>		remove a variábel do ambiente
+export teste			=>		torna a variável teste como global para ser acessível por todo o sistema, inclusive outros BASHs
+teste=(5 6 7 8)			=>		Os elementos do array devem estar dentro de parenteses e separados por um "espaço em branco".
+echo ${teste[*]}		=>		exibe todos os elementos do array
+echo ${teste[0]}		=>		exibe o primeiro elemento do array
+teste[1]=9				=>		altera o elemento na posição 1 do array
+unset teste[2]			=>		remove o elemento na posição 2 do array
+unset teste
+teste=(a b c)
+teste[3]=d				=>		adiciona a letra d na posição 3 (criada dinamicamente) do array
+alias					=> 		exibe todos os apelidos criados no sistema
+alias lsl="ls -l"		=>		cria um apelido (lsl) para o comando ls com parêmetro -l
+unalias lsl				=>		remove o apelido
+func_teste() {
+> echo testando funções.
+> echo essas funções funcional analogamente como as stored procedures
+> echo e podem ser executadas no bash ou chamados dentro de scripts.
+> }
+func_palavra(){
+> echo "Linha acrescentada" >> arquivo_func_palavra.txt
+> }
+typeset -f				=>		exibe todas as funções definidas no sistema
+func_teste				=>		executa a função func_teste criada anteriormente
+ls > arq.txt			=>		redireciona o retorno do comando ls para o arquivo arq.txt e caso esse arquivo já exista, será sobrescrito
+ls >> arq.txt			=>		redireciona o retorno do comando ls e cria o arq.txt caso não exista. Se existir o retorno será adicionado ao arquivo existente.
+var=`date +%Y-%m-%d_%H-%M`	=>	retorna o retorno da comando date formatado (ex: 2020-01-20_23-15) para var usando `(crase)
+wc < arq.txt			=>		redireciona o conteúdo do arq.txt para o comando wc

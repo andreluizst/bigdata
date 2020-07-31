@@ -2,12 +2,15 @@ FROM cloudera/quickstart:latest
 
 LABEL maintainer="curos bigdata <andre.luiz.silvat@gmail.com>"
 
-RUN sudo yum -y update
-RUN sudo yum -y install yum-utils
-RUN sudo yum -y install python-pip
-#RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-#RUN python get-pip.py
-RUN pip install virtualenv
-RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
-RUN sudo yum -y install python37u
-RUN sudo yum -y install python37u-pip
+RUN yum -y install epel-release
+RUN yum update -y nss
+RUN curl 'https://setup.ius.io/' -o setup-ius.sh
+RUN sh setup-ius.sh
+RUN yum --disablerepo="*" --enablerepo="ius" list python3*
+RUN yum --enablerepo=ius install -y python36u
+RUN cd / && mkdir user_scripts
+
+#RUN yum -y install centos-release-scl
+#RUN yum --disablerepo="*" --enablerepo="centos-sclo-rh" list *python3*
+#RUN yum -y install rh-python36
+#RUN scl enable rh-python36 bash

@@ -1,0 +1,9 @@
+total 11
+drwxrwxrwx 1 root root 4096 Jul 31 20:43 .
+drwxr-xr-x 1 root root 4096 Jul 31 16:59 ..
+-rwxr-xr-x 1 root root   80 Jul 31 17:15 arquivo_func_palavra.txt
+-rwxr-xr-x 1 root root   84 Jul 31 17:15 arquivo_teste01.txt
+-rwxr-xr-x 1 root root  180 Jul 31 20:42 info_arquivos.sh
+-rwxr-xr-x 1 root root    0 Jul 31 20:43 lista_2020-07-31_20-43.log
+-rwxr-xr-x 1 root root  262 Jul 31 17:08 meuscript01.sh
+-rwxr-xr-x 1 root root  161 Jul 31 18:18 testevar.sh
