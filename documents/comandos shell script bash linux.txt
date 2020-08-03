@@ -72,3 +72,13 @@ until [ comando teste ]
 do
 	comandos
 done
+$#							=>		Variável de ambiente que contém os parâmetros passados via linha de comando.
+$0							=>		O parâmetro 0 sempre vai existir e contém o path do próprio script.
+shift						=>		Usado geralmente em um loop que percorre os parâmetros passados para o script.
+									O shift faz com que a lista de parâmetros se comporte como uma fila, onde após ser chamado
+									o $1 tem seu valor descartado e caso exista um valor no parâmetro $2, o mesmo passara para $1
+read						=>		lê entrada do usuário no terminal
+read -p "digite algo:"		=>		-p mostro o texto subsequente como um label. e armazena a resposta na variável de ambiente REPLY
+read nome:					=>		armazena a entrada do usuário na variável nome
+read nome -t 5				=>		-t aguarda por 5 segundos por uma entrada do usuário e depois sai.
+read -s senha:				=>		-s não exibe os caracteres digitados pelo usuário no terminal, apenas os armazena na variável senha.
