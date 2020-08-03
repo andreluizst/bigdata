@@ -28,3 +28,47 @@ ls > arq.txt			=>		redireciona o retorno do comando ls para o arquivo arq.txt e 
 ls >> arq.txt			=>		redireciona o retorno do comando ls e cria o arq.txt caso não exista. Se existir o retorno será adicionado ao arquivo existente.
 var=`date +%Y-%m-%d_%H-%M`	=>	retorna o retorno da comando date formatado (ex: 2020-01-20_23-15) para var usando `(crase)
 wc < arq.txt			=>		redireciona o conteúdo do arq.txt para o comando wc
+wc << EOF
+> linha 1
+> linha 2
+> EOF						=>		retorna todas as linhas após o EOF (pode ser qualquer palavra)
+var1=$[2+2]					=>		atribui o resultado do cálculo [2+2] em var1. Cálculos devem ser realizados entre [] (colchetes)
+echo $?						=>		retorna o código de status do último comando executado que pode ser de 0 até 255, sendo 0 = sucesso
+códigos de status +comuns	=>		0=sucesso, 1=Erro geral desconhecido, 126=Comando não encontrato(permissão), 127=Comando não encontrato,
+									130=Comando terminado com Ctrl+C
+if test condição
+	comandos...
+fi							=>		bloco if utilizando teste condicional.
+if [ condição ]
+	comandos...
+fi							=>		mesmo que o comando anterior
+comparadores numéricos		=>		-eq, -gt, -ge, -lt, -le
+comparadores de string		=>		=, !=, < (menor em ordem alfabética), > (maior em ordem alfabética),
+									-n (verifica se o comprimento é maior que zero),
+									-z (verifica se a string tem comprimento igual a zero)
+case $var in
+	caso1)
+		comandos;;
+	caso2)
+		comandos;;
+	caso3 ou caso4)
+		comandos;;
+	*)
+		Comandos padrão;;
+Esac
+for valor in valores
+do
+	comandos
+done
+for ((i=1;i<=15;i++))
+do
+	comandos
+done
+while [ comando_teste ]
+do
+	comandos
+done
+until [ comando teste ]
+do
+	comandos
+done
