@@ -42,7 +42,7 @@ fi							=>		bloco if utilizando teste condicional.
 if [ condição ]
 	comandos...
 fi							=>		mesmo que o comando anterior
-comparadores numéricos		=>		-eq, -gt, -ge, -lt, -le
+comparadores numéricos		=>		-eq, -ne, -gt, -ge, -lt, -le
 comparadores de string		=>		=, !=, < (menor em ordem alfabética), > (maior em ordem alfabética),
 									-n (verifica se o comprimento é maior que zero),
 									-z (verifica se a string tem comprimento igual a zero)
@@ -82,3 +82,17 @@ read -p "digite algo:"		=>		-p mostro o texto subsequente como um label. e armaz
 read nome:					=>		armazena a entrada do usuário na variável nome
 read nome -t 5				=>		-t aguarda por 5 segundos por uma entrada do usuário e depois sai.
 read -s senha:				=>		-s não exibe os caracteres digitados pelo usuário no terminal, apenas os armazena na variável senha.
+
+yum install -y dialog
+dialog --title "Caixa de msg" --msgbox "Teste" 10 35 (link: https://www.youtube.com/watch?v=q90fP1IDc3I&list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs&index=29)
+dialog --title "Confirmação" --yesno "Escolha sim ou não" 10 35
+nome=$(dialog --inputbox "Digite seu nome:" 10 25 --stdout)
+dialog --textbox /etc/group 20 25
+sistema=$(dialog --menu "Escolha um sistema:" 20 35 15 \
+1 "Linux" \
+2 "Windows" \
+3 "Android" \
+4 "BSD" \
+5 "Solaris" --stdout)
+dialog --title "Sucesso" --infobox "Operação concluída" 5 35; sleep 4; clear
+diálogo de data etc			=>		https://www.youtube.com/watch?v=q90fP1IDc3I&list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs&index=29

@@ -9,6 +9,7 @@ RUN sh setup-ius.sh
 RUN yum --disablerepo="*" --enablerepo="ius" list python3*
 RUN yum --enablerepo=ius install -y python36u
 RUN cd / && mkdir user_scripts
+RUN yum install -y dialog
 
 #RUN yum -y install centos-release-scl
 #RUN yum --disablerepo="*" --enablerepo="centos-sclo-rh" list *python3*
